@@ -10,84 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | เข้าสู่ระบบ</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background: #f7f7f7;
-      }
-      .container {
-        margin-top: 50px;
-      }
-      .input-group {
-        margin: 10px 0;
-      }
-      input {
-        padding: 10px;
-        width: 200px;
-      }
-      button {
-        padding: 10px 20px;
-        margin-top: 10px;
-      }
-      .error-message {
-        color: red;
-        margin-bottom: 10px;
-      }
-
-      /* modal */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        justify-content: center;
-        align-items: center;
-      }
-      .modal-content {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-        max-width: 350px;
-        margin: auto;
-        animation: popup 0.3s ease;
-      }
-      @keyframes popup {
-        from { transform: scale(0.7); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
-      }
-      .modal-content img {
-        max-width: 100%;
-        border-radius: 10px;
-      }
-      .close {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        font-size: 28px;
-        cursor: pointer;
-      }
-      .btn.ghost {
-        margin-top: 15px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 8px;
-        background: pink;
-        cursor: pointer;
-        font-size: 16px;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
       <h2>เข้าสู่ระบบ</h2>
-      <img id="statusImage" src="./snow.png" alt="Status Image" width="150" />
+      <img id="statusImage" src="./snow.png" alt="Status Image" />
       <form id="loginForm">
         <div id="errorMessage" class="error-message"></div>
         <div class="input-group">
@@ -104,14 +35,15 @@
     <div class="modal" id="successModal">
       <div class="modal-content">
         <span class="close" id="closeModal">&times;</span>
-        <h2>นั้นแน๊ เข้ามาในใจเเล้วไม่ให้ออกน้า 💖</h2>
-        <img src="./success.jpg" alt="Success Image" />
-        <a href="https://www.instagram.com/USERNAME" target="_blank" rel="noopener noreferrer">
+        <h2>นั้นแน๊ เข้ามาอ่านเอามา 20 </h2>
+        <h2>สู้เด้อๆๆ เป็นกำลังใจนะคะ </h2>
+        <img src="./ssnow.png" alt="Success Image" />
+        <a href="https://www.youtube.com/watch?v=xsSsRMwWTx0&list=RDxsSsRMwWTx0&start_radio=1" target="_blank" rel="noopener noreferrer">
           <button class="btn ghost">ไปดู IG 💖</button>
         </a>
       </div>
     </div>
-
+    <!-- <script src="script.js"></script> -->
     <script>
       const loginForm = document.getElementById("loginForm");
       const errorMessage = document.getElementById("errorMessage");
@@ -126,14 +58,17 @@
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value.trim();
 
-        if (username === "aina" && password === "123456") {
-          errorMessage.textContent = "";
-          statusImage.src = "./success.jpg";
-          modal.style.display = "flex";
-        } else {
-          errorMessage.textContent = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
-          statusImage.src = "./error.jpg";
-        }
+        if (username === "Pornthip" && password === "28052541") {
+  errorMessage.textContent = "";
+  errorMessage.style.display = "none"; // ซ่อนเวลา login ถูก
+  statusImage.src = "./snow.png";
+  modal.style.display = "flex";
+} else {
+  errorMessage.style.display = "block"; // ให้โชว์
+  errorMessage.textContent = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+  statusImage.src = "./snow.png";
+}
+
       };
 
       // ปิด modal
